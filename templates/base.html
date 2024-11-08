@@ -48,33 +48,33 @@
                   {{ user.username }}
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
+                  {% if user.profile %}
+                  <li><a class="dropdown-item" href="{% url 'show_profile' user.profile.pk %}">View Profile</a></li>
+                  <li><a class="dropdown-item" href="{% url 'edit_profile' user.profile.pk %}">Edit Profile</a></li>
+                  <li><a class="dropdown-item" href="{% url 'password_change' %}">Change password</a></li>
+                  <li> <hr class="dropdown-divider" /></li>
                   <li>
-                    <a class="dropdown-item" href="{% url 'password_change' %}">
-                      Change password</a
-                    >
+                  <form method="post" action="{% url 'logout' %}" style="display: inline">
+                  {% csrf_token %}
+                  <a href="#" onclick="event.preventDefault(); this.closest('form').submit();"
+                  class="dropdown-item" style="color: black; cursor: pointer">Logout</a>
+                  </form>
                   </li>
+                  {%else%}
+                  <li><a class="dropdown-item" href="{% url 'password_change' %}">Change password</a></li>
+                  <li><hr class="dropdown-divider" /></li>
                   <li>
-                    <hr class="dropdown-divider" />
+                  <form method="post" action="{% url 'logout' %}" style="display: inline">
+                  {% csrf_token %}
+                  <a href="#" onclick="event.preventDefault(); this.closest('form').submit();"
+                  class="dropdown-item" style="color: black; cursor: pointer">Logout</a>
+                  </form>
                   </li>
-                  <li>
-                    <form
-                      method="post"
-                      action="{% url 'logout' %}"
-                      style="display: inline"
-                    >
-                      {% csrf_token %}
-                      <a
-                        href="#"
-                        onclick="event.preventDefault(); this.closest('form').submit();"
-                        class="dropdown-item"
-                        style="color: black; cursor: pointer"
-                        >Logout</a
-                      >
-                    </form>
+                  {%endif%}
+                  </ul>
                   </li>
-                </ul>
-              </li>
-              {% else %}
+                  {% else %}
+                  
             </ul>
           </div>
           <div class="mr-auto">
