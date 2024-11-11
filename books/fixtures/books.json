@@ -1,0 +1,46 @@
+[
+    {
+        "model": "books.book",
+        "pk": "03c7e339-4421-4d23-af40-1444e5573d78",
+        "fields": {
+            "title": "Hippio",
+            "author": "James Corhill",
+            "price": "4.20",
+            "date_publication": "2024-11-08",
+            "cover": ""
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": "75df90da-66d8-45db-b9a0-9a59036a4edd",
+        "fields": {
+            "title": "After Darkness Swept",
+            "author": "James Corhill",
+            "price": "8.40",
+            "date_publication": "2024-11-07",
+            "cover": ""
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": "a0ee08a6-1eb2-42c9-bc0e-e421ccf20908",
+        "fields": {
+            "title": "Keystone's Harp",
+            "author": "James Corhill",
+            "price": "7.30",
+            "date_publication": "2024-11-06",
+            "cover": ""
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": "cd721493-d4f1-4a6d-ab19-b6b9b1cf7646",
+        "fields": {
+            "title": "Python Cookbook: Recipes For Mastering Python",
+            "author": "Brian K. Jones",
+            "price": "40.00",
+            "date_publication": "2024-11-11",
+            "cover": "covers/PythonCookbook.jpg"
+        }
+    }
+]
